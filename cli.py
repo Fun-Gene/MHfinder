@@ -87,8 +87,6 @@ def screen_mhs_main():
                        help='Microhaplotype file from previous step')
     parser.add_argument('--p-threshold', '-p', type=float, required=True,
                        help='GWAS p-value threshold')
-    parser.add_argument('--mhs-diversity-threshold', '-d', type=float, required=False,
-                       help='Diversity threshold of microhaplotype (optional)')
     parser.add_argument('--Ae-threshold', '-a', type=float, required=False,
                        help='Effective number of alleles threshold (optional)')
     parser.add_argument('--output', '-o', type=str, required=True,
@@ -105,7 +103,7 @@ def screen_mhs_main():
             sample_info=args.sample_info,
             mhs_file=args.mhs_file,
             p_threshold=args.p_threshold,
-            mhs_diversity_threshold=args.mhs_diversity_threshold,
+            mhs_diversity_threshold=None,
             Ae_threshold=args.Ae_threshold,
             output=args.output,
             loop_times=args.loop_times
